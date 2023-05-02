@@ -3,8 +3,14 @@ from sqlmodel import create_engine, Session, SQLModel
 
 from sqlalchemy.orm import sessionmaker
 
+USER = "myuser"
+PASS = "123456789"
+HOST = "localhost"
+DB = "Test2"
+
+
 engine = create_engine(
-    "postgresql://myuser:123456789@localhost/Test2", echo=True)
+    f"postgresql://{USER}:{PASS}@{HOST}/{DB}", echo=True)
 
 
 def create_tables():
